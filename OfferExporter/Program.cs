@@ -250,7 +250,7 @@ foreach (var referential in referentials)
         // Each line of the file will contain a product serialized into JSON.
         foreach (var product in referential)
         {
-            jsonBytes.AddRange(Utf8Json.JsonSerializer.Serialize(product));
+            jsonBytes.AddRange(Utf8Json.JsonSerializer.Serialize(product,  Utf8Json.Resolvers.StandardResolver.ExcludeNull ));
             jsonBytes.AddRange(bytesOfNewLine);
         }
 
